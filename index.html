@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A46 ASSIGNMENT</title>
+</head>
+<body>
+  <h1>Save Text Using Local Storage</h1>
+  <input type="text" id="text" placeholder="Type something...">
+  <button id="save">Save</button>
+  <h2 id="output"></h2>
+  <script>
+    const input = document.getElementById("text");
+    const save = document.getElementById("save");
+    const display = document.getElementById("output");
+    const saved = localStorage.getItem("text") || "";
+    display.innerHTML = saved;
+    save.addEventListener("click", function () {
+      localStorage.setItem("text", input.value);
+      display.innerHTML = input.value;
+    });
+  </script>
+</body>
+</html>
